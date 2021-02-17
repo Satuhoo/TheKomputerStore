@@ -2,6 +2,7 @@ let balance = 0;
 let pay = 0;
 let outstandingLoan = 0;
 let loaned = false;
+let repayLoan;
 
 function getBalance() {
     document.getElementById("balance").innerHTML = balance + " €";
@@ -57,19 +58,43 @@ getLoan.addEventListener("click", function() {
     }
 })
 
+function activeRepayButton() {
+    repayLoan = document.getElementById("repay-loan-btn");
+    repayLoan.addEventListener("click", function() {
+        if (outstandingLoan - pay < 0) {
+            outstandingLoan = 0;
+        } else {
+            outstandingLoan = outstandingLoan - pay;
+        }
+        pay = 0;
+        getPay();
+        getOutstandingLoan();
+    })
+}
+
+
 function createLoanText() {
     let loanText = document.createElement("p");
     let text = document.createTextNode("Loan");
     loanText.appendChild(text);
 
     let loanAmount = document.createElement("p");
-    loanAmount.setAttribute("id", "loan")
+    loanAmount.setAttribute("id", "loan");
     let amount = document.createTextNode(outstandingLoan + " €");
     loanAmount.appendChild(amount);
 
     let element = document.getElementById("loan-txt");
     element.appendChild(loanText); 
     element.appendChild(loanAmount); 
+
+    let repayLoanButton = document.createElement("button");
+    repayLoanButton.setAttribute("id", "repay-loan-btn");
+    let buttonText = document.createTextNode("Repay loan");
+    repayLoanButton.appendChild(buttonText);
+
+    let buttonElement = document.getElementById("buttons");
+    buttonElement.appendChild(repayLoanButton);
+    activeRepayButton();
 }
 
 getBalance();
