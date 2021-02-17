@@ -12,19 +12,21 @@
             <p class="title">Name</p>
             <div class="flex-container-nested-row">
                 <p>Balance</p>
-                <p>0 €</p>
+                <p id="balance"></p>
             </div>
-            <button>Get a loan</button>
+            <div class="flex-container-nested-row" id="loan-txt">
+            </div>
+            <button id="loan-btn">Get a loan</button>
         </div>
         <div class="box">
             <p class="title">Work</p>
             <div class="flex-container-nested-row">
                 <p>Pay</p>
-                <p>0 €</p>
+                <p id="pay"></p>
             </div>
             <div>
-                <button>Bank</button>
-                <button>Work</button>
+                <button id="bank-btn">Bank</button>
+                <button id="work-btn">Work</button>
             </div>
         </div>
         <div class="box">
@@ -44,5 +46,6 @@
             <button>Buy now!</button>
         </div>
     </div>
+    <script src="../app.js"></script>
 </body>
 </html>
