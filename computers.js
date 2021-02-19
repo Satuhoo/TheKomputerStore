@@ -29,7 +29,6 @@ let laptop = laptops[0];
 const dropdown = document.getElementById("dropdown");
 dropdown.addEventListener("change", function() {
     var option = dropdown.options[dropdown.selectedIndex];
-    console.log(opt.value)
     if (option.value == 1) {
         laptop = laptops[0];
     } else if (option.value == 2) {

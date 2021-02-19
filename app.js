@@ -3,6 +3,7 @@ let pay = 0;
 let outstandingLoan = 0;
 let loaned = false;
 let repayLoan;
+let bought = true;
 
 function getBalance() {
     document.getElementById("balance").innerHTML = balance + " €";
@@ -43,7 +44,7 @@ const getLoan = document.getElementById("loan-btn");
 getLoan.addEventListener("click", function() {
     let loan = prompt("Please enter amount of loan:");
     loan = parseFloat(loan)
-    if (loan <= balance * 2 && outstandingLoan <= 0) {
+    if (loan <= balance * 2 && outstandingLoan <= 0 && bought) {
         balance = balance + loan;
         outstandingLoan = loan;
         if (!loaned) {
@@ -52,6 +53,7 @@ getLoan.addEventListener("click", function() {
             getOutstandingLoan();
         }
         loaned = true;
+        bought = false;
         getBalance();
     } else {
         alert("You will not be able to get this loan. Please check entered amount or pay previous loan back before trying again");
@@ -96,6 +98,18 @@ function createLoanText() {
     buttonElement.appendChild(repayLoanButton);
     activeRepayButton();
 }
+
+const buy = document.getElementById("buy-btn");
+buy.addEventListener("click", function() {
+    if (balance >= laptop.price) {
+        balance = balance - laptop.price;
+        getBalance();
+        bought = true;
+        alert("Congratulation! You have a nice laptop now!");
+    } else {
+        alert("Sorry, you have not enough money for that. Go to work and try again.")
+    }
+})
 
 getBalance();
 getPay();
