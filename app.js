@@ -72,13 +72,17 @@ function activeRepayButton() {
     //When button is clicked moves money from pay amount to repaying loan
     let repayLoan = document.getElementById("repay-loan-btn");
     repayLoan.addEventListener("click", function() {
-        if (outstandingLoan - pay < 0) {
+        //If the pay amount is more than the loan amount, moves rest of the money to bank balance
+        if (outstandingLoan - pay < 0) { 
+            pay = pay - outstandingLoan;
             outstandingLoan = 0;
+            balance = balance + pay;
         } else {
             outstandingLoan = outstandingLoan - pay;
         }
         pay = 0;
         getPay();
+        getBalance();
         getOutstandingLoan();
     })
 }
