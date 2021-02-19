@@ -31,21 +31,29 @@
         </div>
         <div class="box">
             <p class="title">Laptops</p>
-            <div>Dropdown</div>
-            <p>Features</p>
+            <select id="dropdown">
+                <option value="1">MacBook Air 13</option> 
+                <option value="2">HP EliteBook 840</option>
+                <option value="3">MacBook Pro 13 MWP72</option>
+                <option value="4">Lenovo Ideapad 3</option>
+            </select>           
+            <p id="feature"></p>
         </div>
     </main>
-    <div class="flex-container info box">
-        <div>image</div>
-        <div>
-            <p>name</p>
-            <p>info</p>
-        </div>
-        <div>
-            <p>1500 €</p>
-            <button>Buy now!</button>
+    <div class="info box">
+        <div class="flex-container-laptop">
+            <img id="image"/>
+            <div>
+                <p id="name"></p>
+                <p id="info"></p>
+            </div>
+            <div id="price-column">
+                <p id="price"></p>
+                <button>Buy now!</button>
+            </div>
         </div>
     </div>
     <script src="../app.js"></script>
+    <script src="../computers.js"></script>
 </body>
 </html>

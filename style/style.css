@@ -11,7 +11,7 @@ header {
     display: flex;
     justify-content: center;
     justify-content: space-around;
-    margin: 100px;
+    margin: 50px 100px 0px 100px;
 }
 
 .flex-container > div {
@@ -26,12 +26,40 @@ header {
         margin-bottom: 30px;
         flex-basis: auto;
     }
+    .flex-container-laptop {
+        flex-direction: column;
+    }
+    #image {
+        width: 50px;
+        height: auto;
+    }
+    .info {
+        margin: 0px;
+    }
 }
 
 .flex-container-nested-row {
     display: flex;
     justify-content: center;
     justify-content: space-between;
+}
+
+.flex-container-laptop {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.flex-container-laptop > #image {
+    margin: 30px;
+}
+
+.flex-container-laptop > div {
+    margin: 30px;
+}
+
+.flex-container-laptop > #price-column {
+    flex-basis: 300px;
 }
 
 .box {
@@ -48,16 +76,29 @@ header {
 
 button {
     border-radius: 5px;
-    padding: 7px;
+    padding: 8px;
     background-color: teal;
     color: #f0f0f2;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    cursor: pointer;
 }
 
 .info {
-    margin:130px
+    margin: 40px 130px 100px 130px;
+}
+
+#image {
+    width: 200px;
+    height: 150px;
+}
+
+#name {
+    font-weight: bold;
+}
+
+#dropdown {
+    border-color: teal;
+    border-width: 2px;
+    border-radius: 5px;
+    color: black;
+    height: 30px;
 }
