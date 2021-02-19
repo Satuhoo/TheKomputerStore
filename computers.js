@@ -24,8 +24,10 @@ let laptops = [{
     info: `The Lenovo IdeaPad 3 14 "Laptop is perfect for working and browsing on the go. With a slim design, it fits easily into your bag and can be taken anywhere. And at 1.5 kg, it won't weigh you down either.`
 }];
 
+//Sets default laptop
 let laptop = laptops[0];
 
+//Changes the shown laptop when selected from dropdown menu
 const dropdown = document.getElementById("dropdown");
 dropdown.addEventListener("change", function() {
     var option = dropdown.options[dropdown.selectedIndex];
@@ -41,6 +43,7 @@ dropdown.addEventListener("change", function() {
     getData();
 })
 
+//Functionality for getting and updating computer's data
 function getData() {
     document.getElementById("feature").innerHTML = `<b>Features:</b> <br/> ${laptop.feature}`;
     document.getElementById("name").innerHTML = laptop.name;
