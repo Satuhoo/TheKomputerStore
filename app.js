@@ -6,15 +6,15 @@ let bought = true; //Helps to prevent taking out more than one loan before buyin
                    //Default true, because then it's possible to get first loan
 
 //Functionality for getting and updating balance, pay and loan
-function getBalance() {
+const getBalance = () => {
     document.getElementById("balance").innerHTML = balance + " €";
 }
 
-function getPay() {
+const getPay = () => {
     document.getElementById("pay").innerHTML = pay + " €";
 }
 
-function getOutstandingLoan() {
+const getOutstandingLoan = () => {
     document.getElementById("loan").innerHTML = outstandingLoan + " €";
 }
 
